@@ -27,9 +27,12 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-    print (message)
-    line_bot_api.reply_message(event.reply_token, message)
+    if event.message.text==u"==":
+        line_bot_api.reply_message(event.reply_token,
+        TextSendMessage(u"都2018還有人==不加空格"))
+    else:
+        line_bot_api.reply_message(event.reply_token,
+        TextSendMessage(text=event.message.text))
 
 import os
 if __name__ == "__main__":
