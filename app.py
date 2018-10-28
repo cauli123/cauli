@@ -30,7 +30,7 @@ def handle_message(event):
     if event.message.text==u"==":
         line_bot_api.reply_message(event.reply_token,
         TextSendMessage(u"都2018還有人==不加空格"))
-    else if event.message.text==u"##":
+    elif event.message.text==u"##":
         line_bot_api.reply_message(event.reply_token,
         TextSendMessage(u"都2018還有人##不加空格"))        
     else:
